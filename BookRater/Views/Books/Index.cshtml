@@ -1,14 +1,25 @@
 ﻿@model IEnumerable<BookRater.Models.BookReview>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Book Ratings";
 }
 
-<h1>Index</h1>
+<h1>Book Ratings</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-controller="Books" asp-action="Index" method="get">
+    <p class="d-flex align-items-center">
+        <label>
+            Book Title: 
+            <input type="text" name="Search" />
+        </label>
+        <input type="submit" value="Filter" class="btn btn-primary" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
